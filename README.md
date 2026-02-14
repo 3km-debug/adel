@@ -98,6 +98,23 @@ Included unit tests:
 ## Ubuntu deployment
 Detailed Hetzner deployment steps:
 - `docs/SETUP_UBUNTU_HETZNER.md`
+- Bootstrap script (run on server as root):
+  - `scripts/hetzner-bootstrap.sh`
+- Deploy/update script (run on server as deploy user):
+  - `scripts/hetzner-deploy.sh`
+
+## Telegram setup
+1. Create bot with `@BotFather`.
+2. Put token in `.env` as `TELEGRAM_BOT_TOKEN`.
+3. Send any message to the bot, then fetch chat id:
+   ```bash
+   npm run telegram:get-chat-id
+   ```
+4. Put the returned id in `.env` as `TELEGRAM_CHAT_ID` and set `TELEGRAM_ENABLED=true`.
+5. Validate messaging:
+   ```bash
+   npm run telegram:selftest -- "Bot is online"
+   ```
 
 ## Security notes
 - Never use your main wallet.

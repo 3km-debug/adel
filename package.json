@@ -12,7 +12,9 @@
     "report": "node scripts/generate-report.js",
     "encrypt-key": "node scripts/encrypt-key.js",
     "print-public-key": "node scripts/print-public-key.js",
-    "backup": "bash scripts/backup-storage.sh"
+    "backup": "bash scripts/backup-storage.sh",
+    "telegram:get-chat-id": "node scripts/telegram-get-chat-id.js",
+    "telegram:selftest": "node scripts/telegram-selftest.js"
   },
   "dependencies": {
     "@solana/web3.js": "^1.98.0",
