@@ -1,0 +1,13 @@
+.env
+node_modules
+npm-debug.log*
+
+storage/runtime/*.sqlite
+storage/runtime/*.sqlite-*
+storage/logs/*.log
+storage/backups/*.sqlite
+storage/secrets/key.enc
+
+bot.log
+launchd.err.log
+launchd.out.log

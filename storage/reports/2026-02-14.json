@@ -1,0 +1,15 @@
+{
+  "date": "2026-02-14",
+  "generatedAt": "2026-02-14T06:27:14.275Z",
+  "trades": {
+    "buys": 0,
+    "sells": 0,
+    "wins": 0,
+    "losses": 0,
+    "winRate": 0
+  },
+  "pnl": {
+    "totalSol": 0
+  },
+  "strategyBreakdown": {}
+}

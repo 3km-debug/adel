@@ -1,0 +1,40 @@
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solana-meme-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./storage:/app/storage
+    command: ["node", "src/index.js"]
+    healthcheck:
+      test: ["CMD", "node", "scripts/run-healthcheck.js"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  backup:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solana-meme-bot-backup
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      bot:
+        condition: service_healthy
+    volumes:
+      - ./storage:/app/storage
+    command:
+      - /bin/bash
+      - -lc
+      - |
+        while true; do
+          bash scripts/backup-storage.sh || true
+          sleep 86400
+        done

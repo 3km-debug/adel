@@ -1,0 +1,27 @@
+{
+  "name": "institutional-solana-memecoin-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Autonomous, risk-governed Solana memecoin trading system with Jupiter execution and encrypted key management.",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test tests/**/*.test.js",
+    "healthcheck": "node scripts/run-healthcheck.js",
+    "report": "node scripts/generate-report.js",
+    "encrypt-key": "node scripts/encrypt-key.js",
+    "print-public-key": "node scripts/print-public-key.js",
+    "backup": "bash scripts/backup-storage.sh"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.0",
+    "better-sqlite3": "^11.8.1",
+    "bs58": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "yaml": "^2.8.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
